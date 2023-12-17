@@ -1,7 +1,7 @@
 import { Stack } from '@mui/system';
 import ButtonMenu from '../UI/ButtonMenu';
 
-const Menu = () => {
+const MenuLink = () => {
     return (
         <Stack spacing={1} direction="row">
             <ButtonMenu link="/news">Новини</ButtonMenu>
@@ -13,4 +13,4 @@ const Menu = () => {
     );
 };
 
-export default Menu;
+export default MenuLink;

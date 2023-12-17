@@ -1,13 +1,15 @@
 import { Outlet } from 'react-router-dom';
 import { Box, Stack } from '@mui/material';
-import Menu from '../pages/Menu';
+
 import Logo from '../components/Logo';
-import Promo from '../components/Promo';
-import Posts from '../components/Posts';
+
+import ResponsiveAppBar from '../pages/ResponsiveAppBar';
+import MenuLink from '../pages/MenuLink';
 
 const MainLayout = () => {
     return (
         <>
+            <ResponsiveAppBar />
             <Box
                 sx={{
                     width: '100%',
@@ -25,16 +27,16 @@ const MainLayout = () => {
                     }}
                 >
                     <Logo />
-                    <Menu />
+                    <MenuLink />
                 </Stack>
-                <Promo />
+
                 <Stack
                     sx={{
                         padding: '16px',
                         backgroundColor: '#ffffff',
                     }}
                 >
-                    <Posts />
+                    {/* <Posts /> */}
                 </Stack>
 
                 <Outlet />
