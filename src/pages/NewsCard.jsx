@@ -3,10 +3,34 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+
+import { Box, CardActionArea, Divider } from '@mui/material';
+
 import { Link } from 'react-router-dom';
 
 const NewsCard = (props) => {
+    const { dataNews } = props;
+
+    const shortMonthNames = [
+        'Січ',
+        'Лют',
+        'Бер',
+        'Кві',
+        'Тра',
+        'Чер',
+        'Лип',
+        'Сер',
+        'Вер',
+        'Жов',
+        'Лис',
+        'Гру',
+    ];
+
+    const day = dataNews.createdAt.getDate();
+    const month = shortMonthNames[dataNews.createdAt.getMonth()];
+    const year = dataNews.createdAt.getFullYear();
+
+    const formattedDate = `${month} ${day}, ${year}`;
     return (
         <Card sx={{ maxWidth: 345, backgroundColor: '#f0f0f0' }} key={props.id}>
             <CardActionArea
@@ -18,7 +42,7 @@ const NewsCard = (props) => {
             >
                 <CardMedia
                     component="img"
-                    height="140"
+                    height="180"
                     image={props.dataNews.image}
                     alt={props.dataNews.alt}
                 />
@@ -30,6 +54,27 @@ const NewsCard = (props) => {
                     >
                         {props.dataNews.title}
                     </Typography>
+                </CardContent>
+
+                <Divider inset="context" />
+                <CardContent orientation="horizontal">
+                    <Box display="flex" justifyContent="space-between">
+                        <Typography
+                            level="body-xs"
+                            fontWeight="md"
+                            textColor="text.secondary"
+                        >
+                            6.3k views
+                        </Typography>
+                        <Divider orientation="vertical" />
+                        <Typography
+                            level="body-xs"
+                            fontWeight="md"
+                            textColor="text.secondary"
+                        >
+                            {formattedDate}
+                        </Typography>
+                    </Box>
                 </CardContent>
             </CardActionArea>
         </Card>

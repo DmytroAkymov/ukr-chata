@@ -39,32 +39,30 @@ const SingleNewsPost = () => {
     const formattedDate = `${month} ${day}, ${year}`;
 
     return (
-        <Box sx={{ width: '100%', maxWidth: 1200, textAlign: 'center' }}>
-            <Box
-                sx={{
-                    width: '100%',
-                    maxWidth: 680,
-                    textAlign: 'left',
-                    margin: 'auto',
-                }}
-            >
-                <Typography variant="caption" gutterBottom>
-                    {formattedDate}
-                </Typography>
-                <Typography variant="h4" gutterBottom>
-                    {newsData.title}
-                </Typography>
-                <CardMedia
-                    component="img"
-                    alt="Your Image Alt Text"
-                    image={newsData.image}
-                    sx={{ mb: 4 }}
-                />
-                <Typography variant="body1" gutterBottom>
-                    {newsData.description}
-                </Typography>
-                <PostActions />
-            </Box>
+        <Box
+            sx={{
+                width: '100%',
+                maxWidth: 680,
+                textAlign: 'left',
+                margin: 'auto',
+            }}
+        >
+            <Typography variant="caption" gutterBottom>
+                {formattedDate}
+            </Typography>
+            <Typography variant="h4" gutterBottom>
+                {newsData.title}
+            </Typography>
+            <CardMedia
+                component="img"
+                alt="Your Image Alt Text"
+                image={newsData.image}
+                sx={{ mb: 4, height: '400px' }}
+            />
+            <Typography variant="body1" gutterBottom>
+                {newsData.description}
+            </Typography>
+            <PostActions />
         </Box>
     );
 };

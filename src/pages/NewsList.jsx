@@ -20,12 +20,13 @@ const NewsList = () => {
         <Box
             sx={{
                 width: '100%',
-                maxWidth: 1100,
+                maxWidth: 1200,
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
                 margin: 'auto',
+                // minHeight: 780,
             }}
         >
             <Grid container spacing={3} sx={{ mb: 4 }}>
@@ -39,6 +40,9 @@ const NewsList = () => {
                 count={totalPages}
                 page={currentPage}
                 onChange={handleChangePage}
+                sx={{
+                    marginTop: 'auto',
+                }}
             />
         </Box>
     );

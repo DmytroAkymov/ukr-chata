@@ -1,23 +1,22 @@
 import { Outlet } from 'react-router-dom';
 import { Box, Stack } from '@mui/material';
 
-import Logo from '../components/Logo';
-
 import ResponsiveAppBar from '../pages/ResponsiveAppBar';
-import MenuLink from '../pages/MenuLink';
+import Footer from '../pages/Footer';
 
 const MainLayout = () => {
     return (
         <>
-            <ResponsiveAppBar />
             <Box
                 sx={{
                     width: '100%',
                     maxWidth: 1200,
                     margin: 'auto',
+                    padding: '60px',
                     textAlign: 'left',
                 }}
             >
+                <ResponsiveAppBar />
                 <Stack
                     direction="row"
                     alignItems="center"
@@ -25,10 +24,7 @@ const MainLayout = () => {
                     sx={{
                         backgroundColor: '#ffffff',
                     }}
-                >
-                    <Logo />
-                    <MenuLink />
-                </Stack>
+                ></Stack>
 
                 <Stack
                     sx={{
@@ -40,6 +36,7 @@ const MainLayout = () => {
                 </Stack>
 
                 <Outlet />
+                <Footer />
             </Box>
         </>
     );

@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import GiteIcon from '@mui/icons-material/Gite';
 
 import ButtonMenu from '../UI/ButtonMenu';
+import { Link } from 'react-router-dom';
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -40,35 +41,30 @@ function ResponsiveAppBar() {
         <AppBar
             position="fixed"
             sx={{
-                backgroundColor: '#f0f0f0',
+                backgroundColor: '#fff', // Устанавливаем белый фон
                 color: 'black',
+                borderBottom: '1px solid #ccc', // Добавляем линию внизу
                 boxShadow: 'none',
             }}
         >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <GiteIcon
-                        sx={{
-                            display: { xs: 'none', md: 'flex' },
-                            mr: 1,
-                            fontSize: '2rem',
-                        }}
-                    />
-                    <Typography
-                        variant="title-lg"
-                        noWrap
-                        component="a"
-                        href="#app-bar-with-responsive-menu"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'Roboto',
-                            fontWeight: 700,
-                            color: 'inherit',
+                    <Link
+                        to="/"
+                        style={{
                             textDecoration: 'none',
+                            color: 'inherit',
+                            display: 'flex',
+                            alignItems: 'center',
                         }}
                     >
-                        Українська хата &nbsp;
+                        <GiteIcon
+                            sx={{
+                                display: { xs: 'none', md: 'flex' },
+                                mr: 1,
+                                fontSize: '2rem',
+                            }}
+                        />
                         <Typography
                             variant="title-lg"
                             noWrap
@@ -78,15 +74,30 @@ function ResponsiveAppBar() {
                                 mr: 2,
                                 display: { xs: 'none', md: 'flex' },
                                 fontFamily: 'Roboto',
-                                fontWeight: 100,
+                                fontWeight: 700,
                                 color: 'inherit',
                                 textDecoration: 'none',
                             }}
                         >
-                            у Вроцлаві
+                            Українська хата &nbsp;
+                            <Typography
+                                variant="title-lg"
+                                noWrap
+                                component="a"
+                                href="#app-bar-with-responsive-menu"
+                                sx={{
+                                    mr: 2,
+                                    display: { xs: 'none', md: 'flex' },
+                                    fontFamily: 'Roboto',
+                                    fontWeight: 100,
+                                    color: 'inherit',
+                                    textDecoration: 'none',
+                                }}
+                            >
+                                у Вроцлаві
+                            </Typography>
                         </Typography>
-                    </Typography>
-
+                    </Link>
                     <Box
                         sx={{
                             flexGrow: 1,

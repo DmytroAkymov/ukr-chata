@@ -4,16 +4,23 @@ import { Box, Typography } from '@mui/material';
 
 const Contacts = () => {
     return (
-        <Box sx={{ width: '100%', maxWidth: 1200, textAlign: 'center' }}>
+        <Box
+            sx={{
+                width: '100%',
+                maxWidth: 1200,
+                textAlign: 'center',
+                minHeight: 780,
+            }}
+        >
             <Box
                 sx={{
                     width: '100%',
-                    maxWidth: 680,
+                    maxWidth: 1200,
                     textAlign: 'left',
                     margin: 'auto',
                 }}
             >
-                <Typography variant="h2" gutterBottom>
+                <Typography variant="h3" gutterBottom>
                     Будемо на зв'язку
                 </Typography>
                 <Typography variant="h6" gutterBottom>
