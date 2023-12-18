@@ -7,29 +7,21 @@ const Contacts = () => {
         <Box
             sx={{
                 width: '100%',
-                maxWidth: 1200,
-                textAlign: 'center',
+                maxWidth: 680,
                 minHeight: 780,
+                textAlign: 'left',
+                margin: 'auto',
             }}
         >
-            <Box
-                sx={{
-                    width: '100%',
-                    maxWidth: 1200,
-                    textAlign: 'left',
-                    margin: 'auto',
-                }}
-            >
-                <Typography variant="h3" gutterBottom>
-                    Будемо на зв'язку
-                </Typography>
-                <Typography variant="h6" gutterBottom>
-                    Допомога та підтримка. Запити електронною поштою:
-                </Typography>
-                <Typography variant="h4" gutterBottom>
-                    support@gmail.com
-                </Typography>
-            </Box>
+            <Typography variant="h3" gutterBottom>
+                Будемо на зв'язку
+            </Typography>
+            <Typography variant="h6" gutterBottom>
+                Допомога та підтримка. Запити електронною поштою:
+            </Typography>
+            <Typography variant="h4" gutterBottom>
+                support@gmail.com
+            </Typography>
         </Box>
     );
 };
