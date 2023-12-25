@@ -10,9 +10,15 @@ import Contacts from './pages/Contacts';
 import MainLayout from './layouts/MainLayout';
 import NewsList from './pages/NewsList';
 import SingleNewsPost from './pages/SingleNewsPost';
+import Login from './pages/Login';
+import Registration from './pages/Registration';
+import { Provider } from 'react-redux';
+import { store } from './store/store'
+import UserPanel from './pages/UserPanel';
 
 const App = () => {
     return (
+        <Provider store={store}>
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<MainLayout />}>
@@ -23,10 +29,14 @@ const App = () => {
                     <Route path="/services" element={<Services />} />
                     <Route path="/forum" element={<Forum />} />
                     <Route path="/contacts" element={<Contacts />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/registration" element={<Registration />} />
+                    <Route path="/userpanel" element={<UserPanel />} />
                     <Route path="*" element={<NoPage />} />
                 </Route>
             </Routes>
         </BrowserRouter>
+        </Provider>
     );
 };
 

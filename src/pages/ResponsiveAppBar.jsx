@@ -15,10 +15,14 @@ import GiteIcon from '@mui/icons-material/Gite';
 
 import ButtonMenu from '../UI/ButtonMenu';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
+    
+    const isLogged = useSelector(state => state.auth.isLogged)
+
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -36,6 +40,7 @@ function ResponsiveAppBar() {
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
+
 
     return (
         <AppBar
@@ -152,6 +157,7 @@ function ResponsiveAppBar() {
                             </ButtonMenu>
                         </Menu>
                     </Box>
+                
                     <GiteIcon
                         sx={{
                             display: { xs: 'flex', md: 'none' },
@@ -216,7 +222,7 @@ function ResponsiveAppBar() {
                         <ButtonMenu link="/contacts">Наші контакти</ButtonMenu>
                     </Box>
 
-                    <Box sx={{ flexGrow: 0 }}>
+                    {isLogged ?  <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton
                                 onClick={handleOpenUserMenu}
@@ -255,7 +261,7 @@ function ResponsiveAppBar() {
                                 </MenuItem>
                             ))}
                         </Menu>
-                    </Box>
+                    </Box> : <ButtonMenu link="/login">Увійти</ButtonMenu> }
                 </Toolbar>
             </Container>
         </AppBar>
